@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Roboto_Condensed } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const robotoCondensed = Roboto_Condensed({
+  subsets: ['latin'],
+  weight: ['300', '400', '700']
+})
 
 export const metadata: Metadata = {
   title: 'Authorly - Prove You Wrote It | Cryptographic Authorship Verification',
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'Authorly',
     images: [
       {
-        url: '/images/logo.png',
+        url: '/images/logo_fav.png',
         width: 1200,
         height: 630,
         alt: 'Authorly - Cryptographic Authorship Verification',
@@ -45,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Authorly - Prove You Wrote It',
     description: 'Stop false AI-detection accusations. Cryptographically prove your writing is authentic.',
-    images: ['/images/logo.png'],
+    images: ['/images/logo_fav.png'],
   },
   robots: {
     index: true,
@@ -83,7 +86,7 @@ export default function RootLayout({
     description: 'Cryptographic authorship verification tool that proves you wrote your essays and documents. Protects students from false AI-detection accusations.',
     operatingSystem: 'Web',
     url: 'https://authorly.provable.dev',
-    image: 'https://authorly.provable.dev/images/logo.png',
+    image: 'https://authorly.provable.dev/images/logo_fav.png',
     publisher: {
       '@type': 'Organization',
       name: 'Authorly',
@@ -103,7 +106,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={robotoCondensed.className}>{children}</body>
     </html>
   )
 }

@@ -82,8 +82,8 @@ export default function Home() {
             Prove You Wrote It
           </h2>
 
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Stop false AI-detection accusations. Cryptographically prove your writing is authentic with a complete, verifiable authorship trail.
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+            Stop false AI-detection accusations.<br></br> Cryptographically prove your writing is authentic with a complete, verifiable authorship trail.
           </p>
 
           <div className="mb-12">
