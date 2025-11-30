@@ -65,9 +65,6 @@ export default function Home() {
         {/* Problem Statement */}
         <div className="max-w-6xl mx-auto mb-16">
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
-              The Problem
-            </h2>
 
             {/* Core Message */}
             <div className="bg-amber-50 border-2 border-amber-200 rounded-lg p-6 mb-8">

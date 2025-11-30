@@ -2,16 +2,16 @@
 -- Use these queries in your Supabase SQL Editor to analyze waitlist data
 
 -- 1. Get overall analytics
-SELECT * FROM waitlist_analytics;
+SELECT * FROM authorly_waitlist_analytics;
 
 -- 2. Get all public testimonials
-SELECT * FROM public_testimonials;
+SELECT * FROM authorly_public_testimonials;
 
 -- 3. Top referral sources
 SELECT
   referral_source,
   COUNT(*) as count
-FROM waitlist
+FROM authorly_waitlist
 GROUP BY referral_source
 ORDER BY count DESC;
 
@@ -19,7 +19,7 @@ ORDER BY count DESC;
 SELECT
   urgency,
   COUNT(*) as total
-FROM waitlist
+FROM authorly_waitlist
 GROUP BY urgency
 ORDER BY
   CASE urgency
@@ -32,14 +32,14 @@ ORDER BY
 SELECT
   falsely_accused,
   COUNT(*) as total_users
-FROM waitlist
+FROM authorly_waitlist
 GROUP BY falsely_accused;
 
 -- 6. Most popular writing tool combinations
 SELECT
   current_writing_tools,
   COUNT(*) as count
-FROM waitlist
+FROM authorly_waitlist
 GROUP BY current_writing_tools
 ORDER BY count DESC
 LIMIT 20;
@@ -48,7 +48,7 @@ LIMIT 20;
 SELECT
   DATE(created_at) as date,
   COUNT(*) as signups
-FROM waitlist
+FROM authorly_waitlist
 GROUP BY DATE(created_at)
 ORDER BY date DESC;
 
@@ -59,7 +59,7 @@ SELECT
   COUNT(CASE WHEN urgency = 'this-semester' THEN 1 END) as this_semester,
   COUNT(CASE WHEN urgency = 'next-semester' THEN 1 END) as next_semester,
   COUNT(*) as total
-FROM waitlist
+FROM authorly_waitlist
 GROUP BY use_case
 ORDER BY total DESC;
 
@@ -67,7 +67,7 @@ ORDER BY total DESC;
 SELECT
   detected_currency,
   COUNT(*) as total
-FROM waitlist
+FROM authorly_waitlist
 GROUP BY detected_currency;
 
 -- 10. Most active writing tools (any mention in multi-select)
@@ -78,7 +78,7 @@ FROM (
   SELECT
     unnest(current_writing_tools) as tool,
     COUNT(*) as count
-  FROM waitlist
+  FROM authorly_waitlist
   GROUP BY unnest(current_writing_tools)
 ) t
 ORDER BY count DESC;
@@ -91,7 +91,7 @@ SELECT
   referral_source,
   falsely_accused,
   created_at
-FROM waitlist
+FROM authorly_waitlist
 WHERE urgency IN ('now', 'this-semester')
 ORDER BY
   CASE urgency
@@ -106,4 +106,4 @@ SELECT
   COUNT(CASE WHEN falsely_accused = true THEN 1 END) as direct_victims,
   COUNT(CASE WHEN falsely_accused = false AND friends_family_accused = true THEN 1 END) as indirect_victims,
   COUNT(CASE WHEN falsely_accused = false AND friends_family_accused = false THEN 1 END) as no_experience
-FROM waitlist;
+FROM authorly_waitlist;

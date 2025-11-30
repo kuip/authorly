@@ -1,5 +1,5 @@
--- Create waitlist table
-CREATE TABLE IF NOT EXISTS waitlist (
+-- Create authorly_waitlist table
+CREATE TABLE IF NOT EXISTS authorly_waitlist (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   email VARCHAR(255) NOT NULL UNIQUE,
   use_case VARCHAR(50) NOT NULL CHECK (use_case IN ('school', 'high-school', 'college-admissions', 'research-paper', 'graduate-thesis', 'other')),
@@ -20,35 +20,35 @@ CREATE TABLE IF NOT EXISTS waitlist (
 );
 
 -- Create index on email for faster lookups
-CREATE INDEX IF NOT EXISTS idx_waitlist_email ON waitlist(email);
+CREATE INDEX IF NOT EXISTS idx_authorly_waitlist_email ON authorly_waitlist(email);
 
 -- Create index on created_at for analytics
-CREATE INDEX IF NOT EXISTS idx_waitlist_created_at ON waitlist(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_authorly_waitlist_created_at ON authorly_waitlist(created_at DESC);
 
 -- Create index on use_case for analytics
-CREATE INDEX IF NOT EXISTS idx_waitlist_use_case ON waitlist(use_case);
+CREATE INDEX IF NOT EXISTS idx_authorly_waitlist_use_case ON authorly_waitlist(use_case);
 
 -- Create index on urgency for analytics
-CREATE INDEX IF NOT EXISTS idx_waitlist_urgency ON waitlist(urgency);
+CREATE INDEX IF NOT EXISTS idx_authorly_waitlist_urgency ON authorly_waitlist(urgency);
 
 -- Create index on referral_source for analytics
-CREATE INDEX IF NOT EXISTS idx_waitlist_referral_source ON waitlist(referral_source);
+CREATE INDEX IF NOT EXISTS idx_authorly_waitlist_referral_source ON authorly_waitlist(referral_source);
 
 -- Create index on falsely_accused for analytics
-CREATE INDEX IF NOT EXISTS idx_waitlist_falsely_accused ON waitlist(falsely_accused);
+CREATE INDEX IF NOT EXISTS idx_authorly_waitlist_falsely_accused ON authorly_waitlist(falsely_accused);
 
 -- Enable Row Level Security (RLS)
-ALTER TABLE waitlist ENABLE ROW LEVEL SECURITY;
+ALTER TABLE authorly_waitlist ENABLE ROW LEVEL SECURITY;
 
 -- Create policy for inserting (anyone can sign up)
-CREATE POLICY "Anyone can insert waitlist entries"
-  ON waitlist
+CREATE POLICY "Anyone can insert authorly_waitlist entries"
+  ON authorly_waitlist
   FOR INSERT
   WITH CHECK (true);
 
 -- Create policy for reading (only authenticated users can read - for admin dashboard)
-CREATE POLICY "Only authenticated users can read waitlist"
-  ON waitlist
+CREATE POLICY "Only authenticated users can read authorly_waitlist"
+  ON authorly_waitlist
   FOR SELECT
   USING (auth.role() = 'authenticated');
 
@@ -61,13 +61,13 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER update_waitlist_updated_at
-  BEFORE UPDATE ON waitlist
+CREATE TRIGGER update_authorly_waitlist_updated_at
+  BEFORE UPDATE ON authorly_waitlist
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
 
 -- Analytics view for dashboard (optional)
-CREATE OR REPLACE VIEW waitlist_analytics AS
+CREATE OR REPLACE VIEW authorly_waitlist_analytics AS
 SELECT
   COUNT(*) as total_signups,
   COUNT(DISTINCT DATE(created_at)) as days_active,
@@ -97,15 +97,15 @@ SELECT
   -- Geographic
   COUNT(CASE WHEN detected_currency = 'USD' THEN 1 END) as usd_visitors,
   COUNT(CASE WHEN detected_currency = 'EUR' THEN 1 END) as eur_visitors
-FROM waitlist;
+FROM authorly_waitlist;
 
 -- Create view for public testimonials (anonymous comments from those falsely accused)
-CREATE OR REPLACE VIEW public_testimonials AS
+CREATE OR REPLACE VIEW authorly_public_testimonials AS
 SELECT
   anonymous_comment,
   use_case,
   created_at
-FROM waitlist
+FROM authorly_waitlist
 WHERE falsely_accused = true
   AND anonymous_comment IS NOT NULL
   AND anonymous_comment != ''

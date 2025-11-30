@@ -9,7 +9,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey)
 export async function GET() {
   try {
     const { data, error } = await supabase
-      .from('public_testimonials')
+      .from('authorly_public_testimonials')
       .select('*')
       .limit(10)
 

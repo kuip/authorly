@@ -65,7 +65,7 @@ export default function WaitlistForm({ currency }: WaitlistFormProps) {
       }
 
       const { data, error } = await supabase
-        .from('waitlist')
+        .from('authorly_waitlist')
         .insert([
           {
             email,
