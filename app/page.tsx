@@ -76,8 +76,11 @@ export default function Home() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-            Prove You Wrote It
+            Authorly
           </h1>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Prove You Wrote It
+          </h2>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
             Stop false AI-detection accusations. Cryptographically prove your writing is authentic with a complete, verifiable authorship trail.
