@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'Authorly',
     images: [
       {
-        url: '/images/logo_fav.png',
+        url: '/images/logo.png',
         width: 1200,
         height: 630,
         alt: 'Authorly - Cryptographic Authorship Verification',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Authorly - Prove You Wrote It',
     description: 'Stop false AI-detection accusations. Cryptographically prove your writing is authentic.',
-    images: ['/images/logo_fav.png'],
+    images: ['/images/logo.png'],
   },
   robots: {
     index: true,
@@ -86,7 +86,7 @@ export default function RootLayout({
     description: 'Cryptographic authorship verification tool that proves you wrote your essays and documents. Protects students from false AI-detection accusations.',
     operatingSystem: 'Web',
     url: 'https://authorly.provable.dev',
-    image: 'https://authorly.provable.dev/images/logo_fav.png',
+    image: 'https://authorly.provable.dev/images/logo.png',
     publisher: {
       '@type': 'Organization',
       name: 'Authorly',
