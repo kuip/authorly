@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import WaitlistForm from '@/components/WaitlistForm'
 import Header from '@/components/Header'
 
@@ -196,11 +197,13 @@ export default function Students() {
                     Authorly is not an AI detector. Authorly proves your effort.
                 </p>
 
-                <div className="bg-amber-50 border-2 border-amber-200 rounded-lg px-6 pb-6 pt-6 mb-6 mt-6">
-                  <p className="text-lg md:text-xl font-semibold text-gray-900">
-                    AI detectors are fundamentally flawed.
-                  </p>
-                </div>
+                <Link href="/ai-detectors-are-flawed">
+                  <div className="bg-amber-50 border-2 border-amber-200 rounded-lg px-6 pb-6 pt-6 mb-6 mt-6 cursor-pointer hover:bg-amber-100 hover:border-amber-300 transition-all duration-200">
+                    <p className="text-lg md:text-xl font-semibold text-gray-900">
+                      AI detectors are fundamentally flawed.
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
