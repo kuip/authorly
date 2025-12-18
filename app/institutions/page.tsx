@@ -176,7 +176,7 @@ export default function Institutions() {
             {/* Google Form Embed */}
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
 
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1yxjmrv0WODkh9NS43H-uewswbGw8MmuL-XuTW-rEZNWOTg/viewform?embedded=true" width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1yxjmrv0WODkh9NS43H-uewswbGw8MmuL-XuTW-rEZNWOTg/viewform?embedded=true" width="640" height="850" frameBorder="0" marginHeight={0} marginWidth={0}>Loading…</iframe>
             </div>
           </div>
         </div>
