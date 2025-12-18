@@ -25,6 +25,7 @@ export default function Header() {
               className="h-10 w-auto"
               priority
             />
+            Authorly
           </Link>
 
           {/* Navigation Links */}
