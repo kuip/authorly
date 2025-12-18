@@ -176,7 +176,7 @@ export default function Students() {
                   <svg className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-lg text-gray-700"><strong>Compatible with your favorite editor</strong> - Google Docs, Microsoft Word, Libre Office and more</span>
+                  <span className="text-lg text-gray-700"><strong>Compatible with your favorite editor</strong> - Google Docs, Libre Office, Microsoft Word and more</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
