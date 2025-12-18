@@ -35,6 +35,96 @@ export default function Students() {
 
   return (
     <>
+      {/* AI Agent & Crawler Accessible Content */}
+      <div className="sr-only" aria-hidden="true">
+        <h1>Authorly for Students - Cryptographic Authorship Verification</h1>
+
+        <section>
+          <h2>What is Authorly?</h2>
+          <p>Authorly is a writing verification tool that provides cryptographic proof of authorship for students. It records every keystroke, edit, and revision in real-time to create tamper-proof evidence that you wrote your essays, papers, and assignments.</p>
+        </section>
+
+        <section>
+          <h2>Who is Authorly for?</h2>
+          <p>Authorly is designed for students at all levels:</p>
+          <ul>
+            <li>High school students writing essays and papers</li>
+            <li>College applicants proving authorship of admissions essays</li>
+            <li>University students protecting themselves from false AI accusations</li>
+            <li>Graduate students working on theses and dissertations</li>
+            <li>Any student who wants to prove they wrote their work</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Key Problems Authorly Solves</h2>
+          <ul>
+            <li>False AI detection accusations against human-written work</li>
+            <li>AI detectors flagging good writing as AI-generated</li>
+            <li>Discrimination against non-native English speakers by AI detectors</li>
+            <li>Lack of proof when accused of using AI</li>
+            <li>Failed assignments due to false positives</li>
+            <li>Rejected college applications from AI detector flags</li>
+            <li>Academic integrity violations from unreliable detection tools</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>How Authorly Works</h2>
+          <ol>
+            <li>Write naturally in the Authorly editor</li>
+            <li>Every keystroke and edit is recorded with timestamps</li>
+            <li>Cryptographic signatures create tamper-proof proof</li>
+            <li>Typing patterns and behavioral signatures are captured</li>
+            <li>Generate an authorship certificate showing your complete writing process</li>
+            <li>Share the replayable video of your writing timeline</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Features</h2>
+          <ul>
+            <li>Real-time keystroke capture and recording</li>
+            <li>Cryptographically tamper-proof verification</li>
+            <li>Complete writing replay from blank page to final draft</li>
+            <li>Typing pattern analysis showing unique behavioral signatures</li>
+            <li>Exportable authorship certificates for submission</li>
+            <li>Version history tracking all revisions</li>
+            <li>Collaboration tracking with contribution percentages</li>
+            <li>Privacy-protected design</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Pricing</h2>
+          <p>Launch price: €19.99/month (EUR) or $21.99/month (USD). Early adopters lock in this price forever.</p>
+        </section>
+
+        <section>
+          <h2>Why Students Need Authorly</h2>
+          <p>AI detectors are fundamentally flawed. They were trained on literary works, so good writing naturally resembles AI-generated text. This means the better you write, the more likely you are to be falsely accused. Authorly provides actual proof of your writing process, not just probabilistic guessing.</p>
+        </section>
+
+        <section>
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Does Authorly detect AI?</h3>
+          <p>No. Authorly is not an AI detector. Authorly proves your effort by recording your complete writing process with cryptographic verification.</p>
+
+          <h3>How does Authorly prove I wrote something?</h3>
+          <p>Authorly captures every keystroke, deletion, revision, and edit with precise timestamps and cryptographic proof. It creates a replayable video showing your complete writing timeline from blank page to final submission.</p>
+
+          <h3>Can I use Authorly with my current writing tools?</h3>
+          <p>Authorly works as a standalone writing editor that captures your authorship process.</p>
+
+          <h3>Is my writing private?</h3>
+          <p>Yes. Authorly is privacy-focused and never shares your writing or personal information.</p>
+
+          <h3>What if I collaborate with others?</h3>
+          <p>Authorly tracks collaborative authorship and shows exact contribution percentages for each collaborator.</p>
+        </section>
+      </div>
+
       <Header />
 
       <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
