@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Institutions() {
   const scrollToContact = () => {
@@ -114,7 +115,7 @@ export default function Institutions() {
 
       <Header />
 
-      <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <main className="flex-1 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 py-16 md:py-24">
           {/* Hero Section - Two Column Layout */}
           <div className="max-w-6xl mx-auto mb-16">
@@ -142,11 +143,7 @@ export default function Institutions() {
                   Replace unreliable AI detection with verifiable authorship proof.
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Protect your institution from legal liability and support academic integrity.
-                </p>
-
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Protect the academic integrity of your students.
+                  Protect the academic integrity of your students and protect your institution from legal liability.
                 </p>
 
                 <div>
@@ -175,7 +172,6 @@ export default function Institutions() {
                     Schools and universities using AI detectors face significant liability:
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4 text-gray-700">
-                    <li><strong>Discrimination lawsuits</strong> - Bias against non-native speakers and students with learning differences</li>
                     <li><strong>Due process violations</strong> - Wrongful accusations without reliable evidence</li>
                     <li><strong>Reputational damage</strong> - Public backlash and loss of student trust</li>
                     <li><strong>Regulatory compliance</strong> - Potential violations of educational standards and student rights</li>
@@ -278,15 +274,10 @@ export default function Institutions() {
             </div>
           </div>
         </div>
-      </div>
-
-        {/* Footer */}
-        <footer className="border-t border-gray-200 py-8 mt-16">
-          <div className="container mx-auto px-4 text-center text-gray-600">
-            <p>&copy; 2025 Authorly. All rights reserved.</p>
-          </div>
-        </footer>
+        </div>
       </main>
+
+      <Footer />
     </>
   )
 }

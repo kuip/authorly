@@ -109,7 +109,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={robotoCondensed.className}>{children}</body>
+      <body className={`${robotoCondensed.className} min-h-screen flex flex-col`}>{children}</body>
     </html>
   )
 }

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function AIDetectorsAreFlawed() {
   return (
@@ -114,7 +115,7 @@ export default function AIDetectorsAreFlawed() {
 
       <Header />
 
-      <main className="min-h-screen bg-white">
+      <main className="flex-1 bg-white">
         {/* Article Header */}
       <article className="container mx-auto px-4 py-16 max-w-4xl">
         <header className="mb-12">
@@ -365,14 +366,9 @@ export default function AIDetectorsAreFlawed() {
           </p>
         </section>
       </article>
-
-        {/* Footer */}
-        <footer className="border-t border-gray-200 py-8 mt-16">
-          <div className="container mx-auto px-4 text-center text-gray-600">
-            <p>&copy; 2025 Authorly. All rights reserved.</p>
-          </div>
-        </footer>
       </main>
+
+      <Footer />
     </>
   )
 }

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import WaitlistForm from '@/components/WaitlistForm'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Students() {
   const [pricing, setPricing] = useState({ currency: 'EUR', amount: '19.99' })
@@ -128,7 +129,7 @@ export default function Students() {
 
       <Header />
 
-      <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <main className="flex-1 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 py-16 md:py-24">
           {/* Hero Section - Two Column Layout */}
           <div className="max-w-6xl mx-auto mb-16">
@@ -326,14 +327,9 @@ export default function Students() {
           </div>
 
         </div>
-
-        {/* Footer */}
-        <footer className="border-t border-gray-200 py-8 mt-16">
-          <div className="container mx-auto px-4 text-center text-gray-600">
-            <p>&copy; 2025 Authorly. All rights reserved.</p>
-          </div>
-        </footer>
       </main>
+
+      <Footer />
     </>
   )
 }
